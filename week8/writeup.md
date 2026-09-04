@@ -1,83 +1,83 @@
-# Week 8 Write-up
-Tip: To preview this markdown file
-- On Mac, press `Command (⌘) + Shift + V`
-- On Windows/Linux, press `Ctrl + Shift + V`
+# 第 8 周 作业记录（Write-up）
+提示：预览本 Markdown 文件
+- Mac：按下 `Command (⌘) + Shift + V`
+- Windows/Linux：按下 `Ctrl + Shift + V`
 
-## Instructions
+## 填写说明
 
-Fill out all of the `TODO`s in this file.
+请填完本文件中的全部 `TODO`。
 
-## Submission Details
+## 提交信息
 
-Name: **TODO** \
-SUNet ID: **TODO** \
-Citations: **TODO**
+姓名：**TODO** \
+学号：**TODO** \
+引用来源：**TODO**
 
-This assignment took me about **TODO** hours to do. 
+本次作业大约耗时 **TODO** 小时。
 
 
-## App Concept 
+## 应用概念
 ```
-TODO: Provide a brief, high-level overview of your app, highlighting its main features. This overview should be the same across all three app versions.
+TODO：对你的应用做一段简短的高层概览，突出其主要功能。这段概览在三个版本中保持一致。
 ```
 
 
-## Version #1 Description
+## 版本 #1 描述
 ```
-APP DETAILS:
+应用详情：
 ===============
-Folder name: TODO
-AI app generation platform: TODO
-Tech Stack: TODO
-Persistence: TODO
-Frameworks/Libraries Used: TODO
-(Optional but recommended) Screenshots of core flows: TODO
+文件夹名称：TODO
+AI 应用生成平台：TODO
+技术栈：TODO
+持久化方式：TODO
+使用的框架/库：TODO
+（可选但推荐）核心流程截图：TODO
 
-REFLECTIONS:
+反思：
 ===============
-a. Issues encountered per stack and how you resolved them: TODO
+a. 各技术栈遇到的问题以及你的解决办法：TODO
 
-b. Prompting (e.g. what required additional guidance; what worked poorly/wel): TODO
+b. 提示词实践（例如哪些地方需要额外引导；哪些做法效果不佳/良好）：TODO
 
-c. Approximate time-to-first-run and time-to-feature metrics: TODO
+c. 大致的时间指标：首次运行耗时与功能实现耗时：TODO
 ```
 
-## Version #2 Description
+## 版本 #2 描述
 ```
-APP DETAILS:
+应用详情：
 ===============
-Folder name: TODO
-AI app generation platform: TODO
-Tech Stack: TODO
-Persistence: TODO
-Frameworks/Libraries Used: TODO
-(Optional but recommended) Screenshots of core flows: TODO
+文件夹名称：TODO
+AI 应用生成平台：TODO
+技术栈：TODO
+持久化方式：TODO
+使用的框架/库：TODO
+（可选但推荐）核心流程截图：TODO
 
-REFLECTIONS:
+反思：
 ===============
-a. Issues encountered per stack and how you resolved them: TODO
+a. 各技术栈遇到的问题以及你的解决办法：TODO
 
-b. Prompting (e.g. what required additional guidance; what worked poorly/wel): TODO
+b. 提示词实践（例如哪些地方需要额外引导；哪些做法效果不佳/良好）：TODO
 
-c. Approximate time-to-first-run and time-to-feature metrics: TODO
+c. 大致的时间指标：首次运行耗时与功能实现耗时：TODO
 ```
 
-## Version #3 Description
+## 版本 #3 描述
 ```
-APP DETAILS:
+应用详情：
 ===============
-Folder name: TODO
-AI app generation platform: TODO
-Tech Stack: TODO
-Persistence: TODO
-Frameworks/Libraries Used: TODO
-(Optional but recommended) Screenshots of core flows: TODO
+文件夹名称：TODO
+AI 应用生成平台：TODO
+技术栈：TODO
+持久化方式：TODO
+使用的框架/库：TODO
+（可选但推荐）核心流程截图：TODO
 
-REFLECTIONS:
+反思：
 ===============
-a. Issues encountered per stack and how you resolved them: TODO
+a. 各技术栈遇到的问题以及你的解决办法：TODO
 
-b. Prompting (e.g. what required additional guidance; what worked poorly/wel): TODO
+b. 提示词实践（例如哪些地方需要额外引导；哪些做法效果不佳/良好）：TODO
 
-c. Approximate time-to-first-run and time-to-feature metrics: TODO
+c. 大致的时间指标：首次运行耗时与功能实现耗时：TODO
 ```
