@@ -1,1 +1,1 @@
-"""API routers package (week5)."""
+"""第 5 周 API 路由包。"""

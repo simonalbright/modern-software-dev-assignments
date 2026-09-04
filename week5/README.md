@@ -1,59 +1,59 @@
-# Week 5
+# 第 5 周
 
-Minimal full‑stack starter for experimenting with autonomous coding agents.
+用于实验自主编码智能体的极简全栈起步应用。
 
-- FastAPI backend with SQLite (SQLAlchemy)
-- Static frontend (no Node toolchain needed)
-- Minimal tests (pytest)
-- Pre-commit (black + ruff)
-- Tasks to practice agent-driven workflows
+- FastAPI 后端 + SQLite（SQLAlchemy）
+- 静态前端（无需 Node 工具链）
+- 极简测试（pytest）
+- pre-commit（black + ruff）
+- 用于练习智能体驱动工作流的任务清单
 
-## Quickstart
+## 快速上手
 
-1) Create and activate a virtualenv, then install dependencies
+1) 创建并激活虚拟环境，然后安装依赖
 
 ```bash
-cd /Users/mihaileric/Documents/code/modern-software-dev-assignments
+cd /path/to/your/project
 python -m venv .venv && source .venv/bin/activate
 pip install -e .[dev]
 ```
 
-2) (Optional) Install pre-commit hooks
+2)（可选）安装 pre-commit 钩子
 
 ```bash
 pre-commit install
 ```
 
-3) Run the app (from `week5/`)
+3) 运行应用（在 `week5/` 下）
 
 ```bash
 cd week5 && make run
 ```
 
-Open `http://localhost:8000` for the frontend and `http://localhost:8000/docs` for the API docs.
+打开 `http://localhost:8000` 访问前端，`http://localhost:8000/docs` 查看 API 文档。
 
-## Structure
+## 目录结构
 
 ```
-backend/                # FastAPI app
-frontend/               # Static UI served by FastAPI
-data/                   # SQLite DB + seed
-docs/                   # TASKS for agent-driven workflows
+backend/                # FastAPI 应用
+frontend/               # 由 FastAPI 托管的静态前端
+data/                   # SQLite 数据库 + 种子数据
+docs/                   # 供智能体驱动工作流使用的任务清单
 ```
 
-## Tests
+## 测试
 
 ```bash
 cd week5 && make test
 ```
 
-## Formatting/Linting
+## 格式化 / Lint
 
 ```bash
 cd week5 && make format
 cd week5 && make lint
 ```
 
-## Configuration
+## 配置
 
-Copy `.env.example` to `.env` (in `week5/`) to override defaults like the database path.
+把 `.env.example` 复制为 `.env`（放在 `week5/` 下），即可覆盖数据库路径等默认配置。

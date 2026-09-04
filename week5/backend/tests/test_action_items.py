@@ -1,5 +1,5 @@
 def test_create_and_complete_action_item(client):
-    payload = {"description": "Ship it"}
+    payload = {"description": "立即上线"}
     r = client.post("/action-items/", json=payload)
     assert r.status_code == 201, r.text
     item = r.json()

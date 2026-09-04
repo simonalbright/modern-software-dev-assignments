@@ -21,10 +21,10 @@ async function loadActions() {
   const items = await fetchJSON('/action-items/');
   for (const a of items) {
     const li = document.createElement('li');
-    li.textContent = `${a.description} [${a.completed ? 'done' : 'open'}]`;
+    li.textContent = `${a.description} [${a.completed ? '已完成' : '未完成'}]`;
     if (!a.completed) {
       const btn = document.createElement('button');
-      btn.textContent = 'Complete';
+      btn.textContent = '标记完成';
       btn.onclick = async () => {
         await fetchJSON(`/action-items/${a.id}/complete`, { method: 'PUT' });
         loadActions();

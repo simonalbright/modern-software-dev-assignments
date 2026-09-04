@@ -1,1 +1,1 @@
-"""Backend package (week5)."""
+"""第 5 周后端包。"""

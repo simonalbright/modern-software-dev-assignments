@@ -1,72 +1,71 @@
-# Week 5 Write-up
-Tip: To preview this markdown file
-- On Mac, press `Command (⌘) + Shift + V`
-- On Windows/Linux, press `Ctrl + Shift + V`
+# 第 5 周 作业记录（Write-up）
+提示：预览本 Markdown 文件
+- Mac：按下 `Command (⌘) + Shift + V`
+- Windows/Linux：按下 `Ctrl + Shift + V`
 
-## INSTRUCTIONS
+## 填写说明
 
-Fill out all of the `TODO`s in this file.
+请填完本文件中的全部 `TODO`。
 
-## SUBMISSION DETAILS
+## 提交信息
 
-Name: **TODO** \
-SUNet ID: **TODO** \
-Citations: **TODO**
+姓名：**TODO** \
+学号：**TODO** \
+引用来源：**TODO**
 
-This assignment took me about **TODO** hours to do. 
+本次作业大约耗时 **TODO** 小时。
 
 
-## YOUR RESPONSES
-### Automation A: Warp Drive saved prompts, rules, MCP servers
+## 你的作答
+### 自动化 A：Warp Drive 保存的提示词、规则、MCP 服务器
 
-a. Design of each automation, including goals, inputs/outputs, steps
+a. 每个自动化的设计：目标、输入/输出、步骤
 > TODO
 
-b. Before vs. after (i.e. manual workflow vs. automated workflow)
+b. 前后对比（即手动工作流 vs 自动化工作流）
 > TODO
 
-c. Autonomy levels used for each completed task (what code permissions, why, and how you supervised)
+c. 每个任务使用的自主级别（用了哪些代码权限、为什么，以及你是如何监督的）
 > TODO
 
-d. (if applicable) Multi‑agent notes: roles, coordination strategy, and concurrency wins/risks/failures
+d.（如适用）多智能体笔记：角色、协调策略、并发的收益/风险/失败
 > TODO
 
-e. How you used the automation (what pain point it resolves or accelerates)
-> TODO
-
-
-
-### Automation B: Multi‑agent workflows in Warp 
-
-a. Design of each automation, including goals, inputs/outputs, steps
-> TODO
-
-b. Before vs. after (i.e. manual workflow vs. automated workflow)
-> TODO
-
-c. Autonomy levels used for each completed task (what code permissions, why, and how you supervised)
-> TODO
-
-d. (if applicable) Multi‑agent notes: roles, coordination strategy, and concurrency wins/risks/failures
-> TODO
-
-e. How you used the automation (what pain point it resolves or accelerates)
+e. 你是如何用这个自动化的（它解决/加速了哪个痛点）
 > TODO
 
 
-### (Optional) Automation C: Any Additional Automations
-a. Design of each automation, including goals, inputs/outputs, steps
+
+### 自动化 B：Warp 中的多智能体工作流
+
+a. 每个自动化的设计：目标、输入/输出、步骤
 > TODO
 
-b. Before vs. after (i.e. manual workflow vs. automated workflow)
+b. 前后对比（即手动工作流 vs 自动化工作流）
 > TODO
 
-c. Autonomy levels used for each completed task (what code permissions, why, and how you supervised)
+c. 每个任务使用的自主级别（用了哪些代码权限、为什么，以及你是如何监督的）
 > TODO
 
-d. (if applicable) Multi‑agent notes: roles, coordination strategy, and concurrency wins/risks/failures
+d.（如适用）多智能体笔记：角色、协调策略、并发的收益/风险/失败
 > TODO
 
-e. How you used the automation (what pain point it resolves or accelerates)
+e. 你是如何用这个自动化的（它解决/加速了哪个痛点）
 > TODO
 
+
+### （可选）自动化 C：其他补充自动化
+a. 每个自动化的设计：目标、输入/输出、步骤
+> TODO
+
+b. 前后对比（即手动工作流 vs 自动化工作流）
+> TODO
+
+c. 每个任务使用的自主级别（用了哪些代码权限、为什么，以及你是如何监督的）
+> TODO
+
+d.（如适用）多智能体笔记：角色、协调策略、并发的收益/风险/失败
+> TODO
+
+e. 你是如何用这个自动化的（它解决/加速了哪个痛点）
+> TODO
