@@ -101,7 +101,7 @@ def extract_tool_call(text: str) -> Dict[str, Any]:
 
 def run_model_for_tool_call(system_prompt: str) -> Dict[str, Any]:
     response = chat(
-        model="qwen2.5",
+        model="qwen2.5:7b",
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": "现在调用工具。"},

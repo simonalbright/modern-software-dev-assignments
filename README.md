@@ -38,10 +38,18 @@
 
 ## 模型说明
 
-本材料中的提示工程与 LLM 相关实验统一使用 **Qwen2.5**（通过 [Ollama](https://ollama.com/) 在本地运行）。首次使用前请拉取模型：
+本材料中的提示工程与 LLM 相关实验通过 [Ollama](https://ollama.com/) 在本地运行 **Qwen2.5**（Instruct 版）。模型按各练习原规模对标选用：
+
+| 适用练习 | 对标原模型 | 现用模型（Ollama 标签） |
+|---|---|---|
+| 多数提示技巧 | Llama 3.1 8B | Qwen2.5-7B-Instruct（`qwen2.5:7b`） |
+| K-shot 提示 | Mistral-Nemo 12B | Qwen2.5-14B-Instruct（`qwen2.5:14b`） |
+
+首次使用前请拉取所需模型：
 
 ```bash
-ollama pull qwen2.5
+ollama pull qwen2.5:7b
+ollama pull qwen2.5:14b
 ```
 
 各周实验的具体运行方式见对应目录下的说明文档。
