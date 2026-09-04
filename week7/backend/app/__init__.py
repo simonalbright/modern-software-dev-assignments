@@ -1,2 +1,2 @@
-# Week 6 backend app package
+# 第 7 周 FastAPI 后端应用包
 

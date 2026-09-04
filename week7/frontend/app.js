@@ -23,10 +23,10 @@ async function loadActions(params = {}) {
   const items = await fetchJSON('/action-items/?' + query.toString());
   for (const a of items) {
     const li = document.createElement('li');
-    li.textContent = `${a.description} [${a.completed ? 'done' : 'open'}]`;
+    li.textContent = `${a.description} [${a.completed ? '已完成' : '未完成'}]`;
     if (!a.completed) {
       const btn = document.createElement('button');
-      btn.textContent = 'Complete';
+      btn.textContent = '标记完成';
       btn.onclick = async () => {
         await fetchJSON(`/action-items/${a.id}/complete`, { method: 'PUT' });
         loadActions(params);
@@ -34,7 +34,7 @@ async function loadActions(params = {}) {
       li.appendChild(btn);
     } else {
       const btn = document.createElement('button');
-      btn.textContent = 'Reopen';
+      btn.textContent = '重新打开';
       btn.onclick = async () => {
         await fetchJSON(`/action-items/${a.id}`, {
           method: 'PATCH',

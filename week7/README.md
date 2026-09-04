@@ -1,65 +1,63 @@
-# Week 7
+# 第 7 周
 
-Slightly enhanced full‑stack starter (copied from Week 5) with a few backend improvements.
+在前几周基础上略作增强的全栈起步应用，并对后端做了若干改进。
 
-- FastAPI backend with SQLite (SQLAlchemy)
-- Static frontend (no Node toolchain needed)
-- Minimal tests (pytest)
-- Pre-commit (black + ruff)
-- Enhancements over Week 5:
-  - Timestamps on models (`created_at`, `updated_at`)
-  - Pagination and sorting for list endpoints
-  - Optional filters (e.g., filter action items by completion)
-  - PATCH endpoints for partial updates
+- FastAPI 后端 + SQLite（SQLAlchemy）
+- 静态前端（无需 Node 工具链）
+- 极简测试（pytest）
+- pre-commit（black + ruff）
+- 相比第 5 周的增强点：
+  - 模型增加时间戳字段（`created_at`、`updated_at`）
+  - 列表端点支持分页与排序
+  - 可选过滤器（例如按完成状态过滤动作项）
+  - 支持部分更新的 PATCH 端点
 
-## Quickstart
+## 快速上手
 
-1) Create and activate a virtualenv, then install dependencies
+1) 创建并激活虚拟环境，然后安装依赖
 
 ```bash
-cd /Users/mihaileric/Documents/code/modern-software-dev-assignments
+cd /path/to/your/project
 python -m venv .venv && source .venv/bin/activate
 pip install -e .[dev]
 ```
 
-2) (Optional) Install pre-commit hooks
+2)（可选）安装 pre-commit 钩子
 
 ```bash
 pre-commit install
 ```
 
-3) Run the app (from `week6/`)
+3) 运行应用（在 `week7/` 下）
 
 ```bash
 cd week7 && make run
 ```
 
-Open `http://localhost:8000` for the frontend and `http://localhost:8000/docs` for the API docs.
+打开 `http://localhost:8000` 访问前端，`http://localhost:8000/docs` 查看 API 文档。
 
-## Structure
+## 目录结构
 
 ```
-backend/                # FastAPI app
-frontend/               # Static UI served by FastAPI
-data/                   # SQLite DB + seed
-docs/                   # TASKS for agent-driven workflows
+backend/                # FastAPI 应用
+frontend/               # 由 FastAPI 托管的静态前端
+data/                   # SQLite 数据库 + 种子数据
+docs/                   # 供智能体驱动工作流使用的任务清单
 ```
 
-## Tests
+## 测试
 
 ```bash
 cd week7 && make test
 ```
 
-## Formatting/Linting
+## 格式化 / Lint
 
 ```bash
 cd week7 && make format
 cd week7 && make lint
 ```
 
-## Configuration
+## 配置
 
-Copy `.env.example` to `.env` (in `week7/`) to override defaults like the database path.
-
-
+把 `.env.example` 复制为 `.env`（放在 `week7/` 下），即可覆盖数据库路径等默认配置。

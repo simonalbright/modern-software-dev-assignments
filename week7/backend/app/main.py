@@ -9,16 +9,16 @@ from .models import Base
 from .routers import action_items as action_items_router
 from .routers import notes as notes_router
 
-app = FastAPI(title="Modern Software Dev Starter (Week 6)", version="0.1.0")
+app = FastAPI(title="现代软件开发起步应用（第 7 周）", version="0.1.0")
 
-# Ensure data dir exists
+# 确保数据目录存在
 Path("data").mkdir(parents=True, exist_ok=True)
 
-# Mount static frontend
+# 挂载静态前端
 app.mount("/static", StaticFiles(directory="frontend"), name="static")
 
 
-# Compatibility with FastAPI lifespan events; keep on_event for simplicity here
+# 兼容 FastAPI 的 lifespan 事件机制；此处为简单起见继续使用 on_event
 @app.on_event("startup")
 def startup_event() -> None:
     Base.metadata.create_all(bind=engine)
@@ -30,7 +30,7 @@ async def root() -> FileResponse:
     return FileResponse("frontend/index.html")
 
 
-# Routers
+# 路由注册
 app.include_router(notes_router.router)
 app.include_router(action_items_router.router)
 
