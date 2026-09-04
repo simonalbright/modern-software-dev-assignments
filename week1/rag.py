@@ -27,21 +27,20 @@ def load_corpus_from_files(paths: List[str]) -> List[str]:
     return corpus
 
 
-# Load corpus from external files (simple API docs). If missing, fall back to inline snippet
+# 从外部文件（简单的 API 文档）加载语料；若缺失，则回退为空列表
 CORPUS: List[str] = load_corpus_from_files(DATA_FILES)
 
 QUESTION = (
-    "Write a Python function `fetch_user_name(user_id: str, api_key: str) -> str` that calls the documented API "
-    "to fetch a user by id and returns only the user's name as a string."
+    "请编写一个 Python 函数 `fetch_user_name(user_id: str, api_key: str) -> str`，"
+    "它调用文档中描述的 API 按 id 获取用户，并只返回该用户的姓名（字符串）。"
 )
 
 
-# TODO: Fill this in!
+# TODO: 在这里填写你的系统提示词！
 YOUR_SYSTEM_PROMPT = ""
 
 
-# For this simple example
-# For this coding task, validate by required snippets rather than exact string
+# 针对该编码任务，通过检查关键代码片段（而非精确字符串比对）来验证结果
 REQUIRED_SNIPPETS = [
     "def fetch_user_name(",
     "requests.get",
@@ -52,9 +51,9 @@ REQUIRED_SNIPPETS = [
 
 
 def YOUR_CONTEXT_PROVIDER(corpus: List[str]) -> List[str]:
-    """TODO: Select and return the relevant subset of documents from CORPUS for this task.
+    """TODO: 从 CORPUS 中选出与当前任务相关的文档子集并返回。
 
-    For example, return [] to simulate missing context, or [corpus[0]] to include the API docs.
+    例如，返回 [] 表示模拟"没有上下文"，或返回 [corpus[0]] 表示带上 API 文档。
     """
     return []
 
@@ -63,26 +62,26 @@ def make_user_prompt(question: str, context_docs: List[str]) -> str:
     if context_docs:
         context_block = "\n".join(f"- {d}" for d in context_docs)
     else:
-        context_block = "(no context provided)"
+        context_block = "(未提供上下文)"
     return (
-        f"Context (use ONLY this information):\n{context_block}\n\n"
-        f"Task: {question}\n\n"
-        "Requirements:\n"
-        "- Use the documented Base URL and endpoint.\n"
-        "- Send the documented authentication header.\n"
-        "- Raise for non-200 responses.\n"
-        "- Return only the user's name string.\n\n"
-        "Output: A single fenced Python code block with the function and necessary imports.\n"
+        f"背景资料（只使用以下信息）：\n{context_block}\n\n"
+        f"任务：{question}\n\n"
+        "要求：\n"
+        "- 使用文档中给出的 Base URL 与接口路径。\n"
+        "- 发送文档中给出的认证请求头。\n"
+        "- 对非 200 的响应抛出异常。\n"
+        "- 只返回用户的姓名字符串。\n\n"
+        "输出：一个用 ```python 围起来的代码块，包含该函数及必要的 import。\n"
     )
 
 
 def extract_code_block(text: str) -> str:
-    """Extract the last fenced Python code block, or any fenced code block, else return text."""
-    # Try ```python ... ``` first
+    """提取最后一个 ```python 围起的代码块；若无则取任意围栏代码块，否则返回原文。"""
+    # 先尝试 ```python ... ```
     m = re.findall(r"```python\n([\s\S]*?)```", text, flags=re.IGNORECASE)
     if m:
         return m[-1].strip()
-    # Fallback to any fenced code block
+    # 回退：任意围栏代码块
     m = re.findall(r"```\n([\s\S]*?)```", text)
     if m:
         return m[-1].strip()
@@ -90,14 +89,14 @@ def extract_code_block(text: str) -> str:
 
 
 def test_your_prompt(system_prompt: str, context_provider: Callable[[List[str]], List[str]]) -> bool:
-    """Run up to NUM_RUNS_TIMES and return True if any output matches EXPECTED_OUTPUT."""
+    """最多运行 NUM_RUNS_TIMES 次，若任一次输出满足要求则返回 True。"""
     context_docs = context_provider(CORPUS)
     user_prompt = make_user_prompt(QUESTION, context_docs)
 
     for idx in range(NUM_RUNS_TIMES):
-        print(f"Running test {idx + 1} of {NUM_RUNS_TIMES}")
+        print(f"正在运行第 {idx + 1}/{NUM_RUNS_TIMES} 次测试")
         response = chat(
-            model="llama3.1:8b",
+            model="qwen3.5",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt},
@@ -112,10 +111,10 @@ def test_your_prompt(system_prompt: str, context_provider: Callable[[List[str]],
             print("SUCCESS")
             return True
         else:
-            print("Missing required snippets:")
+            print("缺少以下必需代码片段：")
             for s in missing:
                 print(f"  - {s}")
-            print("Generated code:\n" + code)
+            print("生成的代码：\n" + code)
     return False
 
 

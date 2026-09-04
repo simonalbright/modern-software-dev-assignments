@@ -1,14 +1,10 @@
-API Reference
+API 参考文档
 
-Base URL: https://api.example.com/v1
+Base URL（基础地址）：https://api.example.com/v1
 
-Authentication:
-  Provide header X-API-Key: <your key>
+认证方式：
+  在请求头中携带 X-API-Key: <你的密钥>
 
-Endpoints:
+接口：
   GET /users/{id}
-    - Returns 200 with JSON: {"id": <string>, "name": <string>}
-
-
-
-
+    - 成功时返回 200，响应体为 JSON：{"id": <字符串>, "name": <字符串>}

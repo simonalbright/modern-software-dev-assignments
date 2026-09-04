@@ -9,22 +9,22 @@ load_dotenv()
 NUM_RUNS_TIMES = 1
 
 SYSTEM_PROMPT = """
-You are a coding assistant. Output ONLY a single fenced Python code block that defines
-the function is_valid_password(password: str) -> bool. No prose or comments.
-Keep the implementation minimal.
+你是一个编码助手。只输出一个用 ```python 围起来的代码块，其中定义
+函数 is_valid_password(password: str) -> bool。不要有任何说明文字或注释。
+实现保持最简。
 """
 
-# TODO: Fill this in!
+# TODO: 在这里填写你的反思（Reflexion）提示词！
 YOUR_REFLEXION_PROMPT = ""
 
 
-# Ground-truth test suite used to evaluate generated code
+# 用于评估生成代码的标准测试用例集
 SPECIALS = set("!@#$%^&*()-_")
 TEST_CASES: List[Tuple[str, bool]] = [
-    ("Password1!", True),       # valid
-    ("password1!", False),      # missing uppercase
-    ("Password!", False),       # missing digit
-    ("Password1", False),       # missing special
+    ("Password1!", True),       # 合法
+    ("password1!", False),      # 缺少大写字母
+    ("Password!", False),       # 缺少数字
+    ("Password1", False),       # 缺少特殊字符
 ]
 
 
@@ -40,10 +40,10 @@ def extract_code_block(text: str) -> str:
 
 def load_function_from_code(code_str: str) -> Callable[[str], bool]:
     namespace: dict = {}
-    exec(code_str, namespace)  # noqa: S102 (executing controlled code from model for exercise)
+    exec(code_str, namespace)  # noqa: S102（练习场景：执行受控的模型生成代码）
     func = namespace.get("is_valid_password")
     if not callable(func):
-        raise ValueError("No callable is_valid_password found in generated code")
+        raise ValueError("生成的代码中未找到可调用的 is_valid_password")
     return func
 
 
@@ -53,27 +53,27 @@ def evaluate_function(func: Callable[[str], bool]) -> Tuple[bool, List[str]]:
         try:
             result = bool(func(pw))
         except Exception as exc:
-            failures.append(f"Input: {pw} → raised exception: {exc}")
+            failures.append(f"输入：{pw} → 抛出异常：{exc}")
             continue
 
         if result != expected:
-            # Compute diagnostic based on ground-truth rules
+            # 根据标准规则计算诊断信息
             reasons = []
             if len(pw) < 8:
-                reasons.append("length < 8")
+                reasons.append("长度小于 8")
             if not any(c.islower() for c in pw):
-                reasons.append("missing lowercase")
+                reasons.append("缺少小写字母")
             if not any(c.isupper() for c in pw):
-                reasons.append("missing uppercase")
+                reasons.append("缺少大写字母")
             if not any(c.isdigit() for c in pw):
-                reasons.append("missing digit")
+                reasons.append("缺少数字")
             if not any(c in SPECIALS for c in pw):
-                reasons.append("missing special")
+                reasons.append("缺少特殊字符")
             if any(c.isspace() for c in pw):
-                reasons.append("has whitespace")
+                reasons.append("包含空白字符")
 
             failures.append(
-                f"Input: {pw} → expected {expected}, got {result}. Failing checks: {', '.join(reasons) or 'unknown'}"
+                f"输入：{pw} → 期望 {expected}，实际 {result}。未通过的检查：{', '.join(reasons) or '未知'}"
             )
 
     return (len(failures) == 0, failures)
@@ -81,10 +81,10 @@ def evaluate_function(func: Callable[[str], bool]) -> Tuple[bool, List[str]]:
 
 def generate_initial_function(system_prompt: str) -> str:
     response = chat(
-        model="llama3.1:8b",
+        model="qwen3.5",
         messages=[
             {"role": "system", "content": system_prompt},
-            {"role": "user", "content": "Provide the implementation now."},
+            {"role": "user", "content": "请立即给出实现。"},
         ],
         options={"temperature": 0.2},
     )
@@ -92,9 +92,9 @@ def generate_initial_function(system_prompt: str) -> str:
 
 
 def your_build_reflexion_context(prev_code: str, failures: List[str]) -> str:
-    """TODO: Build the user message for the reflexion step using prev_code and failures.
+    """TODO: 利用 prev_code 与 failures 构造反思步骤所需的用户消息。
 
-    Return a string that will be sent as the user content alongside the reflexion system prompt.
+    返回一个字符串，将作为用户消息与反思系统提示词一起发送。
     """
     return ""
 
@@ -106,9 +106,9 @@ def apply_reflexion(
     failures: List[str],
 ) -> str:
     reflection_context = build_context(prev_code, failures)
-    print(f"REFLECTION CONTEXT: {reflection_context}, {reflexion_prompt}")
+    print(f"反思上下文：{reflection_context}，{reflexion_prompt}")
     response = chat(
-        model="llama3.1:8b",
+        model="qwen3.5",
         messages=[
             {"role": "system", "content": reflexion_prompt},
             {"role": "user", "content": reflection_context},
@@ -123,27 +123,27 @@ def run_reflexion_flow(
     reflexion_prompt: str,
     build_context: Callable[[str, List[str]], str],
 ) -> bool:
-    # 1) Generate initial function
+    # 1) 生成初始函数
     initial_code = generate_initial_function(system_prompt)
-    print("Initial code:\n" + initial_code)
+    print("初始代码：\n" + initial_code)
     func = load_function_from_code(initial_code)
     passed, failures = evaluate_function(func)
     if passed:
-        print("SUCCESS (initial implementation passed all tests)")
+        print("SUCCESS（初始实现通过了全部测试）")
         return True
     else:
-        print(f"FAILURE (initial implementation failed some tests): {failures}")
+        print(f"失败（初始实现未通过部分测试）：{failures}")
 
-    # 2) Single reflexion iteration
+    # 2) 单轮反思迭代
     improved_code = apply_reflexion(reflexion_prompt, build_context, initial_code, failures)
-    print("\nImproved code:\n" + improved_code)
+    print("\n改进后的代码：\n" + improved_code)
     improved_func = load_function_from_code(improved_code)
     passed2, failures2 = evaluate_function(improved_func)
     if passed2:
         print("SUCCESS")
         return True
 
-    print("Tests still failing after reflexion:")
+    print("反思后仍有测试未通过：")
     for f in failures2:
         print("- " + f)
     return False
