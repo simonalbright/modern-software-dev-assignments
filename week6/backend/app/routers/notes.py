@@ -17,7 +17,7 @@ def list_notes(
     q: Optional[str] = None,
     skip: int = 0,
     limit: int = Query(50, le=200),
-    sort: str = Query("-created_at", description="Sort by field, prefix with - for desc"),
+    sort: str = Query("-created_at", description="按字段排序，加 - 前缀表示降序"),
 ) -> list[NoteRead]:
     stmt = select(Note)
     if q:
@@ -47,7 +47,7 @@ def create_note(payload: NoteCreate, db: Session = Depends(get_db)) -> NoteRead:
 def patch_note(note_id: int, payload: NotePatch, db: Session = Depends(get_db)) -> NoteRead:
     note = db.get(Note, note_id)
     if not note:
-        raise HTTPException(status_code=404, detail="Note not found")
+        raise HTTPException(status_code=404, detail="未找到该笔记")
     if payload.title is not None:
         note.title = payload.title
     if payload.content is not None:
@@ -62,7 +62,7 @@ def patch_note(note_id: int, payload: NotePatch, db: Session = Depends(get_db)) 
 def get_note(note_id: int, db: Session = Depends(get_db)) -> NoteRead:
     note = db.get(Note, note_id)
     if not note:
-        raise HTTPException(status_code=404, detail="Note not found")
+        raise HTTPException(status_code=404, detail="未找到该笔记")
     return NoteRead.model_validate(note)
 
 

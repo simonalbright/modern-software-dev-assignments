@@ -1,5 +1,5 @@
 def test_create_complete_list_and_patch_action_item(client):
-    payload = {"description": "Ship it"}
+    payload = {"description": "立即上线"}
     r = client.post("/action-items/", json=payload)
     assert r.status_code == 201, r.text
     item = r.json()
@@ -16,9 +16,9 @@ def test_create_complete_list_and_patch_action_item(client):
     items = r.json()
     assert len(items) >= 1
 
-    r = client.patch(f"/action-items/{item['id']}", json={"description": "Updated"})
+    r = client.patch(f"/action-items/{item['id']}", json={"description": "已更新"})
     assert r.status_code == 200
     patched = r.json()
-    assert patched["description"] == "Updated"
+    assert patched["description"] == "已更新"
 
 

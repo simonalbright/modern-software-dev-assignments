@@ -1,37 +1,37 @@
 <!doctype html>
-<html>
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Modern Software Dev Starter</title>
+    <title>现代软件开发起步应用</title>
     <link rel="stylesheet" href="/static/styles.css" />
   </head>
   <body>
     <main>
-      <h1>Modern Software Dev Starter (Week 7)</h1>
+      <h1>现代软件开发起步应用</h1>
 
       <section>
-        <h2>Notes</h2>
+        <h2>笔记</h2>
         <form id="note-form">
-          <input id="note-title" placeholder="Title" required />
-          <input id="note-content" placeholder="Content" required />
-          <button type="submit">Add</button>
+          <input id="note-title" placeholder="标题" required />
+          <input id="note-content" placeholder="内容" required />
+          <button type="submit">添加</button>
         </form>
         <div style="margin:.25rem 0;">
-          <input id="note-search" placeholder="Search" />
-          <button id="note-search-btn">Search</button>
+          <input id="note-search" placeholder="搜索" />
+          <button id="note-search-btn">搜索</button>
         </div>
         <ul id="notes"></ul>
       </section>
 
       <section>
-        <h2>Action Items</h2>
+        <h2>动作项</h2>
         <form id="action-form">
-          <input id="action-desc" placeholder="Description" required />
-          <button type="submit">Add</button>
+          <input id="action-desc" placeholder="描述" required />
+          <button type="submit">添加</button>
         </form>
         <div style="margin:.25rem 0;">
-          <label><input type="checkbox" id="filter-completed" /> Show completed only</label>
+          <label><input type="checkbox" id="filter-completed" /> 仅显示已完成</label>
         </div>
         <ul id="actions"></ul>
       </section>
@@ -40,5 +40,3 @@
     <script src="/static/app.js"></script>
   </body>
   </html>
-
-

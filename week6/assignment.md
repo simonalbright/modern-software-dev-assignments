@@ -1,61 +1,60 @@
-# Week 6 — Scan and Fix Vulnerabilities with Semgrep
+# 第 6 周 —— 使用 Semgrep 扫描并修复漏洞
 
-## Assignment Overview
-Run static analysis against the provided app in `week6/` using **Semgrep**. Triage findings and remediate a minimum of 3 security issues. In your write-up, explain what issues Semgrep surfaced and how you fixed them.
-
-
-## Learn about Semgrep
-Semgrep is an open-source, static analysis tool that searches code, finds bugs, and enforces secure guardrails and coding standards.
-
-1. Click [here](https://github.com/semgrep/semgrep/blob/develop/README.md) to learn about Semgrep.
-
-2. Follow the installation instructions in the link above. It is up to you whether you prefer to use the **Semgrep Appsec Platform** or the **CLI tool**.
+## 作业概览
+使用 **Semgrep** 对 `week6/` 中提供的应用做静态分析。对发现的问题进行分级（triage），并至少修复 3 个安全问题。在作业记录中说明：Semgrep 暴露了哪些问题，以及你是如何修复的。
 
 
-## Scan tasks
+## 了解 Semgrep
+Semgrep 是一个开源的静态分析工具：它可以检索代码、发现 bug，并强制执行安全护栏与编码规范。
 
-### What you will scan
-- Backend Python (FastAPI): `week6/backend/`
-- Frontend JavaScript: `week6/frontend/`
-- Dependencies: `week6/requirements.txt`
-- Config/env (for secrets): files within `week6/`
+1. 点击[这里](https://github.com/semgrep/semgrep/blob/develop/README.md)了解 Semgrep。
+
+2. 按上面链接中的说明安装。使用 **Semgrep Appsec Platform** 还是 **CLI 工具**，由你自行选择。
 
 
-### Run a general security scan plus focused scans for secrets and dependencies.
+## 扫描任务
 
-From the **assignment repository root**, run the following command to apply a curated CI-style bundle that includes both code and secrets rules:
+### 你要扫描什么
+- 后端 Python（FastAPI）：`week6/backend/`
+- 前端 JavaScript：`week6/frontend/`
+- 依赖：`week6/requirements.txt`
+- 配置/环境变量（检查密钥等机密）：`week6/` 内的文件
+
+
+### 运行一次常规安全扫描，外加针对密钥与依赖的专项扫描。
+
+在**作业仓库根目录**下运行以下命令，以应用一份精选的、类似 CI 的规则包（同时覆盖代码与密钥规则）：
 ```bash
 semgrep ci --subdir week6
 ```
 
-## Task
-1. Pick any 3 issues identified by Semgrep and fix them using an AI coding tool of your choice.
+## 任务
+1. 从 Semgrep 发现的问题中任选 3 个，使用你选择的 AI 编码工具修复它们。
 
-2. Show precise edits and explain the mitigation (e.g., parameterized SQL, safer APIs, stronger crypto, sanitized DOM writes, restricted CORS, dependency upgrades).
+2. 展示精确的改动，并解释缓解原理（例如：参数化 SQL、更安全的 API、更强的加密、清理后的 DOM 写入、受限的 CORS、依赖升级等）。
 
-3. Important: Ensure the app still runs and tests still pass after your fixes.
+3. 重要：修复后，请确保应用仍然可以运行、测试仍然可以通过。
 
-## Deliverables 
-### 1. Brief findings overview 
-- Summarize the categories Semgrep reported (SAST/Secrets/SCA).
-- Note any false positives or noisy rules you chose to ignore and why.
+## 交付物
+### 1. 简要的发现概览
+- 概括 Semgrep 报告的问题类别（SAST / 密钥扫描 Secrets / 依赖扫描 SCA）。
+- 说明你选择忽略的误报或高噪声规则及其原因。
 
-### 2. Three fixes (before → after)
-For each fixed issue:
-- File and line(s)
-- Rule/category Semgrep flagged
-- Brief risk description
-- Your change (short code diff or explanation, AI coding tool usage)
-- Why this mitigates the issue
-
-
-## Tips
-- Prefer minimal, targeted changes that address the root cause.
-- Re‑run Semgrep after each fix to confirm the finding is resolved and no new ones were introduced.
-- For dependencies, document upgraded versions and link to advisories if you used supply-chain scanning.
+### 2. 三个修复（修复前 → 修复后）
+对每个被修复的问题：
+- 文件与行号
+- Semgrep 标记的规则/类别
+- 简要的风险描述
+- 你的改动（简短的代码 diff 或说明，以及 AI 编码工具的使用情况）
+- 为什么这样做可以缓解该问题
 
 
-## Submission Instructions
-1. Make sure you have all changes pushed to your remote repository for grading.
-2. Make sure you've added both brentju and febielin as collaborators on your assignment repository.
-2. Submit via Gradescope. 
+## 提示
+- 优先做最小化、有针对性、直击根因的改动。
+- 每次修复后重新运行 Semgrep，确认该问题已解决且没有引入新问题。
+- 对依赖问题，若使用了供应链扫描，请记录升级后的版本并附上相关公告链接。
+
+
+## 提交说明
+1. 确保你已把全部改动推送到你的远程仓库，以备评分。
+2. 按任课老师的要求完成提交（例如通过指定的作业提交平台）。
