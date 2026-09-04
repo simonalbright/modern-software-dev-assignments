@@ -1,70 +1,70 @@
-# Week 4 Write-up
-Tip: To preview this markdown file
-- On Mac, press `Command (⌘) + Shift + V`
-- On Windows/Linux, press `Ctrl + Shift + V`
+# 第 4 周 作业记录（Write-up）
+提示：预览本 Markdown 文件
+- Mac：按下 `Command (⌘) + Shift + V`
+- Windows/Linux：按下 `Ctrl + Shift + V`
 
-## INSTRUCTIONS
+## 填写说明
 
-Fill out all of the `TODO`s in this file.
+请填完本文件中的全部 `TODO`。
 
-## SUBMISSION DETAILS
+## 提交信息
 
-Name: **TODO** \
-SUNet ID: **TODO** \
-Citations: **TODO**
+姓名：**TODO** \
+学号：**TODO** \
+引用来源：**TODO**
 
-This assignment took me about **TODO** hours to do. 
+本次作业大约耗时 **TODO** 小时。
 
 
-## YOUR RESPONSES
-### Automation #1
-a. Design inspiration (e.g. cite the best-practices and/or sub-agents docs)
+## 你的作答
+### 自动化 #1
+a. 设计灵感（例如引用最佳实践和/或子代理文档）
 > TODO
 
-b. Design of each automation, including goals, inputs/outputs, steps
+b. 每个自动化的设计：目标、输入/输出、步骤
 > TODO
 
-c. How to run it (exact commands), expected outputs, and rollback/safety notes
+c. 如何运行（准确命令）、预期输出、回滚/安全说明
 > TODO
 
-d. Before vs. after (i.e. manual workflow vs. automated workflow)
+d. 前后对比（即手动工作流 vs 自动化工作流）
 > TODO
 
-e. How you used the automation to enhance the starter application
-> TODO
-
-
-### Automation #2
-a. Design inspiration (e.g. cite the best-practices and/or sub-agents docs)
-> TODO
-
-b. Design of each automation, including goals, inputs/outputs, steps
-> TODO
-
-c. How to run it (exact commands), expected outputs, and rollback/safety notes
-> TODO
-
-d. Before vs. after (i.e. manual workflow vs. automated workflow)
-> TODO
-
-e. How you used the automation to enhance the starter application
+e. 你是如何用这个自动化增强起步应用的
 > TODO
 
 
-### *(Optional) Automation #3*
-*If you choose to build additional automations, feel free to detail them here!*
-
-a. Design inspiration (e.g. cite the best-practices and/or sub-agents docs)
+### 自动化 #2
+a. 设计灵感（例如引用最佳实践和/或子代理文档）
 > TODO
 
-b. Design of each automation, including goals, inputs/outputs, steps
+b. 每个自动化的设计：目标、输入/输出、步骤
 > TODO
 
-c. How to run it (exact commands), expected outputs, and rollback/safety notes
+c. 如何运行（准确命令）、预期输出、回滚/安全说明
 > TODO
 
-d. Before vs. after (i.e. manual workflow vs. automated workflow)
+d. 前后对比（即手动工作流 vs 自动化工作流）
 > TODO
 
-e. How you used the automation to enhance the starter application
+e. 你是如何用这个自动化增强起步应用的
+> TODO
+
+
+### *（可选）自动化 #3*
+*如果你还搭建了其他自动化，欢迎在这里详细记录！*
+
+a. 设计灵感（例如引用最佳实践和/或子代理文档）
+> TODO
+
+b. 每个自动化的设计：目标、输入/输出、步骤
+> TODO
+
+c. 如何运行（准确命令）、预期输出、回滚/安全说明
+> TODO
+
+d. 前后对比（即手动工作流 vs 自动化工作流）
+> TODO
+
+e. 你是如何用这个自动化增强起步应用的
 > TODO

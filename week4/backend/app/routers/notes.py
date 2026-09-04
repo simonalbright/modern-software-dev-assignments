@@ -43,5 +43,5 @@ def search_notes(q: Optional[str] = None, db: Session = Depends(get_db)) -> list
 def get_note(note_id: int, db: Session = Depends(get_db)) -> NoteRead:
     note = db.get(Note, note_id)
     if not note:
-        raise HTTPException(status_code=404, detail="Note not found")
+        raise HTTPException(status_code=404, detail="未找到该笔记")
     return NoteRead.model_validate(note)

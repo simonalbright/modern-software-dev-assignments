@@ -1,34 +1,33 @@
-# Tasks for Repo
+# 仓库任务清单
 
-## 1) Enable pre-commit and fix the repo
-- Install hooks: `pre-commit install`
-- Run: `pre-commit run --all-files`
-- Fix any formatting/lint issues (black/ruff)
+## 1) 启用 pre-commit 并修复仓库
+- 安装钩子：`pre-commit install`
+- 运行：`pre-commit run --all-files`
+- 修复所有格式/lint 问题（black/ruff）
 
-## 2) Add search endpoint for notes
-- Add/extend `GET /notes/search?q=...` (case-insensitive) using SQLAlchemy filters
-- Update `frontend/app.js` to use the search query
-- Add tests in `backend/tests/test_notes.py`
+## 2) 为笔记增加搜索端点
+- 使用 SQLAlchemy 过滤器新增/扩展 `GET /notes/search?q=...`（不区分大小写）
+- 更新 `frontend/app.js` 使用该搜索查询
+- 在 `backend/tests/test_notes.py` 中补充测试
 
-## 3) Complete action item flow
-- Implement `PUT /action-items/{id}/complete` (already scaffolded)
-- Update UI to reflect completion (already wired) and extend test coverage
+## 3) 打通动作项流程
+- 实现 `PUT /action-items/{id}/complete`（已有脚手架）
+- 更新 UI 以反映完成状态（前端已接好），并扩展测试覆盖
 
-## 4) Improve extraction logic
-- Extend `backend/app/services/extract.py` to parse tags like `#tag` and return them
-- Add tests for the new parsing behavior
-- (Optional) Expose `POST /notes/{id}/extract` that turns notes into action items
+## 4) 改进抽取逻辑
+- 扩展 `backend/app/services/extract.py`，使其能解析类似 `#tag` 的标签并返回
+- 为新的解析行为补充测试
+-（可选）暴露 `POST /notes/{id}/extract`，把笔记转成动作项
 
-## 5) Notes CRUD enhancements
-- Add `PUT /notes/{id}` to edit a note (title/content)
-- Add `DELETE /notes/{id}` to delete a note
-- Update `frontend/app.js` to support edit/delete; add tests
+## 5) 笔记 CRUD 增强
+- 新增 `PUT /notes/{id}` 编辑笔记（标题/内容）
+- 新增 `DELETE /notes/{id}` 删除笔记
+- 更新 `frontend/app.js` 支持编辑/删除，并补充测试
 
-## 6) Request validation and error handling
-- Add simple validation rules (e.g., min lengths) to `schemas.py`
-- Return informative 400/404 errors where appropriate; add tests for validation failures
+## 6) 请求校验与错误处理
+- 在 `schemas.py` 中加入简单校验规则（例如最小长度）
+- 在合适的地方返回信息明确的 400/404 错误；为校验失败补充测试
 
-## 7) Docs drift check (manual for now)
-- Create/maintain a simple `API.md` describing endpoints and payloads
-- After each change, verify docs match actual OpenAPI (`/openapi.json`)
-
+## 7) 文档漂移检查（暂为手动）
+- 创建/维护一份描述端点与请求体的 `API.md`
+- 每次改动后，确认文档与实际的 OpenAPI（`/openapi.json`）一致

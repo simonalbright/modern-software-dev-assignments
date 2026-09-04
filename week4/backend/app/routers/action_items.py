@@ -28,7 +28,7 @@ def create_item(payload: ActionItemCreate, db: Session = Depends(get_db)) -> Act
 def complete_item(item_id: int, db: Session = Depends(get_db)) -> ActionItemRead:
     item = db.get(ActionItem, item_id)
     if not item:
-        raise HTTPException(status_code=404, detail="Action item not found")
+        raise HTTPException(status_code=404, detail="未找到该动作项")
     item.completed = True
     db.add(item)
     db.flush()
