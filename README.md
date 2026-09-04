@@ -38,10 +38,10 @@
 
 ## 模型说明
 
-本材料中的提示工程与 LLM 相关实验统一使用 **Qwen3.5**（通过 [Ollama](https://ollama.com/) 在本地运行）。首次使用前请拉取模型：
+本材料中的提示工程与 LLM 相关实验统一使用 **Qwen2.5**（通过 [Ollama](https://ollama.com/) 在本地运行）。首次使用前请拉取模型：
 
 ```bash
-ollama pull qwen3.5
+ollama pull qwen2.5
 ```
 
 各周实验的具体运行方式见对应目录下的说明文档。

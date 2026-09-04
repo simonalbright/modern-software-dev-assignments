@@ -42,7 +42,7 @@ poetry run uvicorn week2.app.main:app --reload
 
 一些小提示：
 - 若要生成结构化输出（即 JSON 字符串数组），可参考这篇文档：https://ollama.com/blog/structured-outputs
-- 查看可用的 Ollama 模型：https://ollama.com/library。注意：模型越大资源占用越高，先从小模型开始。拉取并运行模型的命令：`ollama pull qwen3.5`，然后执行 `ollama run qwen3.5`。本课程实验统一使用 qwen3.5。
+- 查看可用的 Ollama 模型：https://ollama.com/library。注意：模型越大资源占用越高，先从小模型开始。拉取并运行模型的命令：`ollama pull qwen2.5`，然后执行 `ollama run qwen2.5`。本课程实验统一使用 qwen2.5。
 
 ### 任务 2：编写单元测试
 

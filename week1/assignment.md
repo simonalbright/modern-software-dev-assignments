@@ -29,7 +29,7 @@ ollama -v
 
 运行测试脚本之前，请先拉取所需的模型。该操作只需执行一次（除非你之后删除了模型）：
 ```bash
-ollama pull qwen3.5
+ollama pull qwen2.5
 ```
 
 ## 技巧与源文件

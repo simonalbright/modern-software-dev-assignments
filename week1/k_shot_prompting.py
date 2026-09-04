@@ -26,7 +26,7 @@ def test_your_prompt(system_prompt: str) -> bool:
     for idx in range(NUM_RUNS_TIMES):
         print(f"正在运行第 {idx + 1}/{NUM_RUNS_TIMES} 次测试")
         response = chat(
-            model="qwen3.5",
+            model="qwen2.5",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": USER_PROMPT},

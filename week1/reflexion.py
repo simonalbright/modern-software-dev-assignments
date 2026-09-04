@@ -81,7 +81,7 @@ def evaluate_function(func: Callable[[str], bool]) -> Tuple[bool, List[str]]:
 
 def generate_initial_function(system_prompt: str) -> str:
     response = chat(
-        model="qwen3.5",
+        model="qwen2.5",
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": "请立即给出实现。"},
@@ -108,7 +108,7 @@ def apply_reflexion(
     reflection_context = build_context(prev_code, failures)
     print(f"反思上下文：{reflection_context}，{reflexion_prompt}")
     response = chat(
-        model="qwen3.5",
+        model="qwen2.5",
         messages=[
             {"role": "system", "content": reflexion_prompt},
             {"role": "user", "content": reflection_context},
