@@ -13,7 +13,7 @@ from . import db
 
 init_db()
 
-app = FastAPI(title="Action Item Extractor")
+app = FastAPI(title="动作项提取器")
 
 
 @app.get("/", response_class=HTMLResponse)

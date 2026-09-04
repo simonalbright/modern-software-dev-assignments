@@ -1,83 +1,82 @@
-# Week 2 Write-up
-Tip: To preview this markdown file
-- On Mac, press `Command (⌘) + Shift + V`
-- On Windows/Linux, press `Ctrl + Shift + V`
+# 第 2 周 作业记录（Write-up）
+提示：预览本 Markdown 文件
+- Mac：按下 `Command (⌘) + Shift + V`
+- Windows/Linux：按下 `Ctrl + Shift + V`
 
-## INSTRUCTIONS
+## 填写说明
 
-Fill out all of the `TODO`s in this file.
+请填完本文件中的全部 `TODO`。
 
-## SUBMISSION DETAILS
+## 提交信息
 
-Name: **TODO** \
-SUNet ID: **TODO** \
-Citations: **TODO**
+姓名：**TODO** \
+学号：**TODO** \
+引用来源：**TODO**
 
-This assignment took me about **TODO** hours to do. 
+本次作业大约耗时 **TODO** 小时。
 
 
-## YOUR RESPONSES
-For each exercise, please include what prompts you used to generate the answer, in addition to the location of the generated response. Make sure to clearly add comments in your code documenting which parts are generated.
+## 你的作答
+针对每个练习，请写明你用来生成答案的提示词，以及生成结果的所在位置。请在代码中用清晰的注释标出哪些部分是由 AI 生成的。
 
-### Exercise 1: Scaffold a New Feature
-Prompt: 
+### 练习 1：搭建新功能骨架
+提示词：
 ```
 TODO
 ``` 
 
-Generated Code Snippets:
+生成的代码片段：
 ```
-TODO: List all modified code files with the relevant line numbers.
+TODO：列出所有改动的代码文件及对应的行号。
 ```
 
-### Exercise 2: Add Unit Tests
-Prompt: 
+### 练习 2：编写单元测试
+提示词：
 ```
 TODO
 ``` 
 
-Generated Code Snippets:
+生成的代码片段：
 ```
-TODO: List all modified code files with the relevant line numbers.
+TODO：列出所有改动的代码文件及对应的行号。
 ```
 
-### Exercise 3: Refactor Existing Code for Clarity
-Prompt: 
+### 练习 3：为可读性重构现有代码
+提示词：
 ```
 TODO
 ``` 
 
-Generated/Modified Code Snippets:
+生成/修改的代码片段：
 ```
-TODO: List all modified code files with the relevant line numbers. (We anticipate there may be multiple scattered changes here – just produce as comprehensive of a list as you can.)
-```
-
-
-### Exercise 4: Use Agentic Mode to Automate a Small Task
-Prompt: 
-```
-TODO
-``` 
-
-Generated Code Snippets:
-```
-TODO: List all modified code files with the relevant line numbers.
+TODO：列出所有改动的代码文件及对应的行号。（这一项可能涉及多处分散的改动——请尽量给出尽可能完整的清单。）
 ```
 
 
-### Exercise 5: Generate a README from the Codebase
-Prompt: 
+### 练习 4：使用代理模式自动化小任务
+提示词：
 ```
 TODO
 ``` 
 
-Generated Code Snippets:
+生成的代码片段：
 ```
-TODO: List all modified code files with the relevant line numbers.
+TODO：列出所有改动的代码文件及对应的行号。
 ```
 
 
-## SUBMISSION INSTRUCTIONS
-1. Hit a `Command (⌘) + F` (or `Ctrl + F`) to find any remaining `TODO`s in this file. If no results are found, congratulations – you've completed all required fields. 
-2. Make sure you have all changes pushed to your remote repository for grading.
-3. Submit via Gradescope. 
+### 练习 5：由代码库生成 README
+提示词：
+```
+TODO
+``` 
+
+生成的代码片段：
+```
+TODO：列出所有改动的代码文件及对应的行号。
+```
+
+
+## 提交说明
+1. 按下 `Command (⌘) + F`（或 `Ctrl + F`）查找本文件中是否还有遗留的 `TODO`。如果没有任何结果，恭喜你——所有必填项都已完成。
+2. 确保你已把全部改动推送到你的远程仓库，并按任课老师的要求提交。

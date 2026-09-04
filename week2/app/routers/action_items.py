@@ -15,7 +15,7 @@ router = APIRouter(prefix="/action-items", tags=["action-items"])
 def extract(payload: Dict[str, Any]) -> Dict[str, Any]:
     text = str(payload.get("text", "")).strip()
     if not text:
-        raise HTTPException(status_code=400, detail="text is required")
+        raise HTTPException(status_code=400, detail="text 为必填项")
 
     note_id: Optional[int] = None
     if payload.get("save_note"):
