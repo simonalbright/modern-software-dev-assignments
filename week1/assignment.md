@@ -27,11 +27,11 @@
 ollama -v
 ```
 
-运行测试脚本之前，请先拉取所需的模型。该操作只需执行一次（除非你之后删除了模型）。脚本按原练习规模对标使用两档模型：多数技巧使用 Qwen2.5-7B-Instruct（对标 Llama 3.1 8B），K-shot 提示练习使用 Qwen2.5-14B-Instruct（对标 Mistral-Nemo 12B）：
+运行测试脚本之前，请先拉取所需的模型。该操作只需执行一次（除非你之后删除了模型）。脚本按原练习规模对标使用两档模型：多数技巧使用 Qwen2.5-7B-Instruct，K-shot 提示练习使用 Qwen2.5-14B-Instruct：
 
 ```bash
-ollama pull qwen2.5:7b
-ollama pull qwen2.5:14b
+ollama run qwen2.5:7b
+ollama run qwen2.5:14b
 ```
 
 ## 技巧与源文件

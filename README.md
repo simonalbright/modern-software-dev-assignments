@@ -48,15 +48,13 @@
 建议以**完整模型名**拉取，再为其建立**别名**，练习与代码即可用短别名（`qwen2.5:7b` / `qwen2.5:14b`）直接调用：
 
 ```bash
-# 1) 以完整模型名拉取（Hugging Face 官方仓库经 Ollama 直拉；若你的网络/镜像不同，可替换为对应完整名称）
-ollama pull hf.co/Qwen/Qwen2.5-7B-Instruct
-ollama pull hf.co/Qwen/Qwen2.5-14B-Instruct
+# 1) 以完整模型名拉取
+ollama pull qwen2.5:7b-instruct
+ollama pull qwen2.5:14b-instruct
 
-# 2) 建立别名（只需一次；之后 ollama run 与代码均使用别名）
-ollama cp hf.co/Qwen/Qwen2.5-7B-Instruct qwen2.5:7b
-ollama cp hf.co/Qwen/Qwen2.5-14B-Instruct qwen2.5:14b
+# 2) 建立别名
+ollama cp qwen2.5:7b-instruct qwen2.5:7b
+ollama cp qwen2.5:14b-instruct qwen2.5:14b
 ```
-
-> 注：若你的 Ollama 版本无法使用 `hf.co/` 直拉，也可改用官方库同款 Instruct 标签 `ollama pull qwen2.5:7b-instruct`、`ollama pull qwen2.5:14b-instruct`（同样可 `ollama cp` 别名）；别名建立后，各周练习（如 week1 的 `ollama run qwen2.5:7b`）无需任何改动。
 
 各周实验的具体运行方式见对应目录下的说明文档。
