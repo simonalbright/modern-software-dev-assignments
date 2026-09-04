@@ -1,8 +1,7 @@
 [tool.poetry]
-name = "modern-software-dev-assignments"
+name = "modern-software-dev-labs"
 version = "0.1.0"
-description = "Course assignments with FastAPI + SQLite starter and tooling"
-authors = ["Course <course@example.com>"]
+description = "教学实验工程：FastAPI + SQLite 起步应用与配套工具"
 readme = "README.md"
 packages = []
 package-mode = false
